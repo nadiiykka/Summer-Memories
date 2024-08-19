@@ -383,6 +383,7 @@
 "Assets/C#/MoveRoom.cs"
 "Assets/C#/Moving.cs"
 "Assets/C#/NewSceneButton.cs"
+"Assets/C#/ParallaxLayer.cs"
 "Assets/C#/Phone.cs"
 "Assets/C#/Pickup.cs"
 -langversion:9.0

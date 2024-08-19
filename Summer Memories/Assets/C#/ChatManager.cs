@@ -1,27 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class ChatManager : MonoBehaviour
 {
-    public Text message1; // Текстове поле для першого повідомлення
-    public Text message2; // Текстове поле для другого повідомлення
+    public TextMeshProUGUI message1; 
+    public TextMeshProUGUI message2; 
 
-    // Масиви для збереження повідомлень
-    public string[] messagesForMessage1; // Повідомлення для першого текстового поля
-    public string[] messagesForMessage2; // Повідомлення для другого текстового поля
+    public string[] messagesForMessage1; 
+    public string[] messagesForMessage2; 
 
     private int messageIndex = 0;
-    private bool isWaitingForClick = true; // Змінна для контролю натискання
+    private bool isWaitingForClick = true;
 
     void Start()
     {
-        ShowMessageInFirstField(); // Показати перше повідомлення одразу після старту
+        ShowMessageInFirstField();
     }
 
     void Update()
     {
-        // Перевіряємо, чи користувач натиснув на екран і чи потрібно чекати на натискання
         if (isWaitingForClick && Input.GetMouseButtonDown(0))
         {
             isWaitingForClick = false;
@@ -31,36 +30,33 @@ public class ChatManager : MonoBehaviour
 
     void ShowMessageInFirstField()
     {
-        // Показуємо повідомлення у першому полі
         if (messageIndex < messagesForMessage1.Length)
         {
             message1.text = messagesForMessage1[messageIndex];
         }
 
-        isWaitingForClick = true; // Очікуємо на наступне натискання
+        isWaitingForClick = true; 
     }
 
     void ShowMessageInSecondField()
     {
-        // Показуємо повідомлення у другому полі
         if (messageIndex < messagesForMessage2.Length)
         {
             message2.text = messagesForMessage2[messageIndex];
         }
 
-        // Запускаємо корутину, щоб почекати кілька секунд і потім показати нове повідомлення у першому полі
         StartCoroutine(ShowNextMessageAfterDelay(2f));
     }
 
     IEnumerator ShowNextMessageAfterDelay(float delay)
     {
-        yield return new WaitForSeconds(delay); // Очікування
+        yield return new WaitForSeconds(delay); 
 
         messageIndex++;
 
         if (messageIndex < messagesForMessage1.Length || messageIndex < messagesForMessage2.Length)
         {
-            ShowMessageInFirstField(); // Показуємо наступне повідомлення у першому полі
+            ShowMessageInFirstField(); 
         }
     }
 }
