@@ -383,6 +383,8 @@
 "Assets/C#/MoveRoom.cs"
 "Assets/C#/Moving.cs"
 "Assets/C#/NewSceneButton.cs"
+"Assets/C#/ParallaxBackground.cs"
+"Assets/C#/ParallaxCamera.cs"
 "Assets/C#/ParallaxLayer.cs"
 "Assets/C#/Phone.cs"
 "Assets/C#/Pickup.cs"

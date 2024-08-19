@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     private float jumpingPower = 3f;
     private bool isFacingRight = true;
 
+    public float minX; // мінімальна координата X, яку може зайняти персонаж
+    public float maxX; // максимальна координата X, яку може зайняти персонаж
+
     public Animator animator; // Посилання на компонент Animator
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -40,6 +43,15 @@ public class PlayerMovement : MonoBehaviour
     {
         // Рух персонажа
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
+        // Отримуємо поточну позицію персонажа
+        Vector3 clampedPosition = transform.position;
+
+        // Обмежуємо координату X між minX та maxX
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, minX, maxX);
+
+        // Оновлюємо позицію персонажа
+        transform.position = clampedPosition;
     }
 
     private bool IsGrounded()
