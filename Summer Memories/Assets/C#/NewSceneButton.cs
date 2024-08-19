@@ -1,16 +1,28 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-[ExecuteInEditMode]
-public class ParallaxLayer : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
-    public float parallaxFactor;
+    public Animator cameraAnim;  // Прив'язка аніматора до камери
 
-    public void Move(float delta)
+    public void LoadNextScene()
     {
-        Vector3 newPos = transform.localPosition;
-        newPos.x -= delta * parallaxFactor;
+        // Підписуємося на подію завершення завантаження сцени
+        SceneManager.sceneLoaded += OnSceneLoaded;
 
-        transform.localPosition = newPos;
+        // Завантажуємо наступну сцену
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
+    // Цей метод викликається автоматично, коли нова сцена завантажена
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Встановлюємо параметр анімації у новій сцені
+        cameraAnim = FindObjectOfType<Camera>().GetComponent<Animator>();
+        cameraAnim.SetFloat("Dialogue", 1.25f);
+
+        // Відписуємося від події, щоб уникнути помилок у майбутньому
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 }

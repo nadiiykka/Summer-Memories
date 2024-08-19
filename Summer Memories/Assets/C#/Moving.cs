@@ -7,39 +7,50 @@ public class PlayerMovement : MonoBehaviour
     private float jumpingPower = 3f;
     private bool isFacingRight = true;
 
+    public Animator animator; // Посилання на компонент Animator
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
     void Update()
     {
+        // Отримуємо горизонтальний ввід
         horizontal = Input.GetAxisRaw("Horizontal");
 
+        // Оновлюємо анімаційний параметр Speed для перемикання між анімаціями
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
+        // Стрибок
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
+        // Зменшення швидкості під час відпускання кнопки стрибка
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
+        // Відзеркалення персонажа при русі вліво/вправо
         Flip();
     }
 
     private void FixedUpdate()
     {
+        // Рух персонажа
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
     private bool IsGrounded()
     {
+        // Перевірка, чи персонаж на землі
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
     private void Flip()
     {
+        // Перевірка на зміну напрямку руху
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight = !isFacingRight;
