@@ -478,7 +478,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: assets
+  type: 
   description: The JetBrains Rider Editor package provides an integration for using
     the JetBrains Rider IDE as a code editor for Unity. It adds support for generating
     .csproj files for code completion and auto-discovery of installations.
@@ -670,8 +670,8 @@ m_ResolvedPackages:
     name: 
     email: 
     url: 
-  category: Unity Test Framework
-  type: asset
+  category: 
+  type: 
   description: Test framework for running Edit mode and Play mode tests in Unity.
   status: 0
   errors: []
@@ -4095,8 +4095,8 @@ m_ResolvedPackages:
     name: 
     email: 
     url: 
-  category: 2D
-  type: assets
+  category: 
+  type: 
   description: '2D Tilemap Extras is a package that contains extra scripts for use
     with 2D Tilemap features in Unity. These include custom Tiles and Brushes for
     the Tilemap feature.
@@ -4157,30 +4157,30 @@ m_ResolvedPackages:
     recommended: 3.1.2
     deprecated: []
   dependencies:
-  - name: com.unity.modules.tilemap
+  - name: com.unity.ugui
     version: 1.0.0
   - name: com.unity.2d.tilemap
     version: 1.0.0
-  - name: com.unity.ugui
+  - name: com.unity.modules.tilemap
     version: 1.0.0
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   resolvedDependencies:
-  - name: com.unity.modules.tilemap
-    version: 1.0.0
-  - name: com.unity.modules.physics2d
-    version: 1.0.0
-  - name: com.unity.2d.tilemap
-    version: 1.0.0
-  - name: com.unity.modules.uielements
+  - name: com.unity.ugui
     version: 1.0.0
   - name: com.unity.modules.ui
     version: 1.0.0
   - name: com.unity.modules.imgui
     version: 1.0.0
-  - name: com.unity.modules.jsonserialize
+  - name: com.unity.2d.tilemap
     version: 1.0.0
-  - name: com.unity.ugui
+  - name: com.unity.modules.tilemap
+    version: 1.0.0
+  - name: com.unity.modules.physics2d
+    version: 1.0.0
+  - name: com.unity.modules.uielements
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
     version: 1.0.0
   keywords:
   - 2d

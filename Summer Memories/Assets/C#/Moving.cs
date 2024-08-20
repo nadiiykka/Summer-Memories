@@ -71,4 +71,14 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Trigger"))
+        {
+            speed = 0f;
+            jumpingPower = 0f;
+            animator.enabled = false;
+        }
+    }
 }

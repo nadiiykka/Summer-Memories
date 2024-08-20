@@ -10,6 +10,9 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText;
     public float gameTime;
 
+    public GameObject crosses;
+    public GameObject items;
+
     private bool stopTimer;
 
     // Start is called before the first frame update
@@ -18,6 +21,8 @@ public class Timer : MonoBehaviour
         stopTimer = false;
         timerSlider.maxValue = gameTime;
         timerSlider.value = gameTime;
+        crosses.SetActive(true);
+        items.SetActive(true);
     }
 
     // Update is called once per frame
@@ -33,11 +38,17 @@ public class Timer : MonoBehaviour
         if( time <= 0)
         {
             stopTimer = true;
+            TimeIsUp();
         }
         if ( stopTimer == false)
         {
             timerText.text = textTime;
             timerSlider.value = time;
         }
+    }
+    public void TimeIsUp()
+    {
+        crosses.SetActive(false);
+        items.SetActive(false);
     }
 }

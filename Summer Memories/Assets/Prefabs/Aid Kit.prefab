@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6438528705517841911}
+  - component: {fileID: 5793135896453930233}
   - component: {fileID: 3736336924306566440}
   - component: {fileID: 8563764665209009646}
   - component: {fileID: 8898773407624165294}
   m_Layer: 5
-  m_Name: Pils
+  m_Name: Aid Kit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,6 +39,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 35.25, y: 54.96}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5793135896453930233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263448370468780488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1c5429f0f2ff048847534b596746d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 2647936699439212543, guid: 1091cc3ca182b2c48b68c67323e60d12, type: 3}
 --- !u!222 &3736336924306566440
 CanvasRenderer:
   m_ObjectHideFlags: 0
