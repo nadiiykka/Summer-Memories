@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cap
+  - Aid
+  - Camera
+  - Water
+  - Cactus
+  - Fish
+  - Match
+  - Bread
+  - Book
   layers:
   - Default
   - TransparentFX

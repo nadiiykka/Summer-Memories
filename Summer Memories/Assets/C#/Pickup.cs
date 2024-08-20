@@ -22,7 +22,6 @@ public class Pickup : MonoBehaviour
             {
                 if (inventory.isFull[i] == false)
                 {
-
                     inventory.isFull[i] = true;
                     Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
                     Destroy(gameObject);

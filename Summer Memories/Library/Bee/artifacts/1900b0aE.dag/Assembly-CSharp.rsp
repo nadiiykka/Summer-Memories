@@ -388,6 +388,7 @@
 "Assets/C#/ParallaxLayer.cs"
 "Assets/C#/Phone.cs"
 "Assets/C#/Pickup.cs"
+"Assets/C#/Timer.cs"
 -langversion:9.0
 
 /deterministic

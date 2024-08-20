@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ChatManager : MonoBehaviour
@@ -9,7 +10,7 @@ public class ChatManager : MonoBehaviour
     public TextMeshProUGUI message2; 
 
     public string[] messagesForMessage1; 
-    public string[] messagesForMessage2; 
+    public string[] messagesForMessage2;
 
     private int messageIndex = 0;
     private bool isWaitingForClick = true;
@@ -25,6 +26,13 @@ public class ChatManager : MonoBehaviour
         {
             isWaitingForClick = false;
             ShowMessageInSecondField();
+        }
+
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (messageIndex >= messagesForMessage1.Length && messageIndex >= messagesForMessage2.Length)
+        {
+             SceneManager.LoadScene(currentSceneIndex + 1);
         }
     }
 

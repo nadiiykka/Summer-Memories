@@ -6,7 +6,7 @@ public class SceneLoader : MonoBehaviour
 {
     public Animator cameraAnim;  // Прив'язка аніматора до камери
     public Animator phoneAnim;
-    public float animationDuration = 2f;  // Задайте довжину анімації вручну
+    public float animationDuration = 1.3f;  // Задайте довжину анімації вручну
 
     public void LoadNextScene()
     {

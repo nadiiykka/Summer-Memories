@@ -256,10 +256,18 @@ MonoBehaviour:
   message2: {fileID: 2111745189}
   messagesForMessage1:
   - "Hi! How\xB4s your summer vacation going?"
-  - Omg! You reall
+  - Omg! You need to rest! What are u doing on Friday?
+  - "Come on! I will help you when we get back. Our trip\xB4ll be amazing!"
+  - Hahaha, boring. Pack your backpack
+  - "We\xB4ll walk A LOT, so take only 4 items!"
+  - "Okaaay okay, DEAL! Go, I\xB4ll be at your place in a minute."
   messagesForMessage2:
   - "Hey! Hasn\xB4t really started yet. The exam\xB4s only at the end of the month
     :("
+  - Hmm, I have lots of work... Sorry
+  - "Trip? I thought we\xB4d just go to cafe"
+  - You always know how to shock me. Also, why not suitcase
+  - Omg, okey. But I remember your promise aout help!!!
 --- !u!1 &580208011
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,8 +920,8 @@ Transform:
   m_GameObject: {fileID: 1403232508}
   serializedVersion: 2
   m_LocalRotation: {x: -0.003446956, y: 0, z: 0, w: 0.9999941}
-  m_LocalPosition: {x: 85, y: -15, z: -12775}
-  m_LocalScale: {x: 400.1899, y: 400.18994, z: 400.18994}
+  m_LocalPosition: {x: 49, y: -18, z: -6127}
+  m_LocalScale: {x: 222.55495, y: 222.55498, z: 222.55498}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1275632676}
@@ -972,7 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
