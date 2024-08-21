@@ -12,6 +12,7 @@ public class CameraFollow : MonoBehaviour
     public float minX; // мінімальна координата X, яку може зайняти камера
     public float maxX; // максимальна координата X, яку може зайняти камера
 
+
     void LateUpdate()
     {
         // Задаємо координати цілі, за якими слідуватиме камера

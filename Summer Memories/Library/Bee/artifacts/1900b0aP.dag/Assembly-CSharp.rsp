@@ -322,6 +322,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/C#/CameraFollow.cs"
 "Assets/C#/ChatManager.cs"
+"Assets/C#/ForestChat.cs"
 "Assets/C#/Inventory.cs"
 "Assets/C#/InventoryCheck.cs"
 "Assets/C#/MenuManager.cs"

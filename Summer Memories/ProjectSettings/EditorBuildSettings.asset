@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Inventory.unity
     guid: 5d1d6f4e43071254aa76eea153650d01
   - enabled: 1
+    path: Assets/Scenes/ForestDialogue.unity
+    guid: 09a3c4392e23a9443a1a2ae8d1909c55
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 6c2f847ca9350b146bcb3a5f0f5b4f96
   m_configObjects: {}

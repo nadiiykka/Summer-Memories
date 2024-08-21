@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -72,13 +73,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-        //if(other.CompareTag("Trigger"))
-        //{
-           // speed = 0f;
-           // jumpingPower = 0f;
-          //  animator.enabled = false;
-        //}
-   // }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Trigger"))
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            int currentIndex = currentScene.buildIndex;
+            SceneManager.LoadScene(currentIndex + 1);
+        }
+    }
 }

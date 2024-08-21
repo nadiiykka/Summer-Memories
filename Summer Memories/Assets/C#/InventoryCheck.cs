@@ -11,13 +11,13 @@ public class InventoryCheck : MonoBehaviour
 
     void CheckSavedTags()
     {
-        for (int i = 0; i < 10; i++)  // Припустимо, що у вас може бути до 10 слотів в інвентарі
+        for (int i = 0; i < 4; i++)
         {
             string itemTag = PlayerPrefs.GetString("CollectedItem_" + i, "");
 
-            if (itemTag == "Water")
+            if (itemTag != "Water")
             {
-                Debug.Log("Player has water. Nothing happens.");
+                Debug.Log("Ти шо?");
                 // Тут нічого не робимо
             }
             else if (itemTag == "Book")
