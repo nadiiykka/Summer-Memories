@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemButton;
 
-    // Start is called before the first frame update
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -22,12 +19,17 @@ public class Pickup : MonoBehaviour
                 if (inventory.isFull[i] == false)
                 {
                     inventory.isFull[i] = true;
-                    Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
+
+                    // Збереження тегу у PlayerPrefs
+                    string itemTag = gameObject.tag;
+                    PlayerPrefs.SetString("CollectedItem_" + i, itemTag);
+                    PlayerPrefs.Save();
+
+                    Instantiate(itemButton, inventory.slots[i].transform, false); // Спавнимо кнопку для взаємодії
                     Destroy(gameObject);
                     break;
                 }
             }
         }
-
     }
 }

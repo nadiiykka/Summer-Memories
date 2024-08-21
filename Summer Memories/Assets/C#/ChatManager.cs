@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
@@ -6,10 +6,10 @@ using TMPro;
 
 public class ChatManager : MonoBehaviour
 {
-    public TextMeshProUGUI message1; 
-    public TextMeshProUGUI message2; 
+    public TextMeshProUGUI message1;
+    public TextMeshProUGUI message2;
 
-    public string[] messagesForMessage1; 
+    public string[] messagesForMessage1;
     public string[] messagesForMessage2;
 
     private int messageIndex = 0;
@@ -27,13 +27,6 @@ public class ChatManager : MonoBehaviour
             isWaitingForClick = false;
             ShowMessageInSecondField();
         }
-
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-        if (messageIndex >= messagesForMessage1.Length && messageIndex >= messagesForMessage2.Length)
-        {
-             SceneManager.LoadScene(currentSceneIndex + 1);
-        }
     }
 
     void ShowMessageInFirstField()
@@ -43,7 +36,7 @@ public class ChatManager : MonoBehaviour
             message1.text = messagesForMessage1[messageIndex];
         }
 
-        isWaitingForClick = true; 
+        isWaitingForClick = true;
     }
 
     void ShowMessageInSecondField()
@@ -58,13 +51,24 @@ public class ChatManager : MonoBehaviour
 
     IEnumerator ShowNextMessageAfterDelay(float delay)
     {
-        yield return new WaitForSeconds(delay); 
+        yield return new WaitForSeconds(delay);
 
         messageIndex++;
 
         if (messageIndex < messagesForMessage1.Length || messageIndex < messagesForMessage2.Length)
         {
-            ShowMessageInFirstField(); 
+            ShowMessageInFirstField();
         }
+        else
+        {
+            // Усі повідомлення відображено, завантажуємо нову сцену
+            LoadNextScene();
+        }
+    }
+
+    void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
 }

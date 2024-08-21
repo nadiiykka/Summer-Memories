@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro; 
 
 public class Timer : MonoBehaviour
@@ -50,5 +51,8 @@ public class Timer : MonoBehaviour
     {
         crosses.SetActive(false);
         items.SetActive(false);
+        Scene currentScene = SceneManager.GetActiveScene();
+        int currentIndex = currentScene.buildIndex;
+        SceneManager.LoadScene(currentIndex + 1);
     }
 }

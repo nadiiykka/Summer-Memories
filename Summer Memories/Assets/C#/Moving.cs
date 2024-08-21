@@ -72,13 +72,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.CompareTag("Trigger"))
-        {
-            speed = 0f;
-            jumpingPower = 0f;
-            animator.enabled = false;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+        //if(other.CompareTag("Trigger"))
+        //{
+           // speed = 0f;
+           // jumpingPower = 0f;
+          //  animator.enabled = false;
+        //}
+   // }
 }

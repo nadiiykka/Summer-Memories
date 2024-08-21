@@ -1056,6 +1056,50 @@ Transform:
   - {fileID: 1788135394}
   m_Father: {fileID: 714148496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1227525625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1227525627}
+  - component: {fileID: 1227525626}
+  m_Layer: 0
+  m_Name: InventoryCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1227525626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227525625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 224c4af1119e2574eb19ef99720315e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1227525627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227525625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8969693, y: 4.5520506, z: 705.9949}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1264320078
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,7 +2151,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2039914423}
-  - component: {fileID: 2039914422}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -2115,34 +2158,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2039914422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039914421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9305d1a30383d61409d2213cc486763f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message1: {fileID: 0}
-  message2: {fileID: 0}
-  messagesForMessage1:
-  - "Hi! How\xB4s your summer vacation going?"
-  - Omg! You need to rest! What are u doing on Friday?
-  - "Come on! I will help you when we get back. Our trip\xB4ll be amazing!"
-  - Hahaha, boring. Pack your backpack
-  - "We\xB4ll walk A LOT, so take only 4 items!"
-  - "Okaaay okay, DEAL! Go, I\xB4ll be at your place in a minute."
-  messagesForMessage2:
-  - "Hey! Hasn\xB4t really started yet. The exam\xB4s only at the end of the month
-    :("
-  - Hmm, I have lots of work... Sorry
-  - "Trip? I thought we\xB4d just go to cafe"
-  - You always know how to shock me. Also, why not suitcase
-  - Omg, okey. But I remember your promise aout help!!!
 --- !u!4 &2039914423
 Transform:
   m_ObjectHideFlags: 0
@@ -2255,3 +2270,4 @@ SceneRoots:
   - {fileID: 1264320080}
   - {fileID: 364481020}
   - {fileID: 2039914423}
+  - {fileID: 1227525627}

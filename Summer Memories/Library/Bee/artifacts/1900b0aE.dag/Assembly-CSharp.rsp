@@ -379,6 +379,7 @@
 "Assets/C#/CameraFollow.cs"
 "Assets/C#/ChatManager.cs"
 "Assets/C#/Inventory.cs"
+"Assets/C#/InventoryCheck.cs"
 "Assets/C#/MenuManager.cs"
 "Assets/C#/MoveRoom.cs"
 "Assets/C#/Moving.cs"

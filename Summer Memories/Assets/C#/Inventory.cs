@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,11 +6,10 @@ public class Inventory : MonoBehaviour
 {
     public bool[] isFull;
     public GameObject[] slots;
+    public string[] itemTags;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void Start()
     {
-        if (other.CompareTag("Water"))
-        {
-        }
+        itemTags = new string[slots.Length];
     }
 }
