@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ForestChat : MonoBehaviour
@@ -30,7 +31,7 @@ public class ForestChat : MonoBehaviour
         {
             if (messageIndex == 0)
             {
-                message1.text = "Hello! How are you?";
+                message1.text = "Hello! I already thought that u won´t come";
             }
             else if (messageIndex == 1)
             {
@@ -49,7 +50,7 @@ public class ForestChat : MonoBehaviour
         {
             if (messageIndex == 0)
             {
-                message2.text = "I'm fine, thanks!";
+                message2.text = "Sorry";
             }
             else if (messageIndex == 1)
             {
@@ -82,5 +83,10 @@ public class ForestChat : MonoBehaviour
             if (messageSlot == 0)
                 message2.text = newMessage;
         }
+    }
+    void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
 }

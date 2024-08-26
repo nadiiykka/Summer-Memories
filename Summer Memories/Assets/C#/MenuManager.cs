@@ -5,15 +5,12 @@ public class MenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("CutScene");
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
     {
+        Debug.Log("Lopetit pelin.");
         Application.Quit();
-    }
-    public void WinScene()
-    {
-        SceneManager.LoadScene("WinScene");
     }
 }

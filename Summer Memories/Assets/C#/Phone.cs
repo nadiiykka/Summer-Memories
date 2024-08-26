@@ -10,7 +10,7 @@ public class Phone : MonoBehaviour
     public Animator phoneAnimation;
     public Animator cameraAnim;
     public Animator birdAnim;
-    // public AudioSource ringing;
+    public AudioSource ringing;
     private float dilay = 5f;
     private float timer = 0f;
 
@@ -25,8 +25,8 @@ public class Phone : MonoBehaviour
         cameraAnim.enabled = false;
         birdAnim.SetFloat("Fly", 0.0f);
         cameraAnim.SetFloat("Dialogue", 0.0f);
-        // ringing.GetComponent<AudioSource>();
-        // ringing.enabled = false;
+        ringing.GetComponent<AudioSource>();
+        ringing.enabled = false;
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class Phone : MonoBehaviour
             phoneAnimation.enabled = true;
             cameraAnim.enabled = true;
             birdAnim.SetFloat("Fly", 1.0f);
-            // ringing.enabled = true;
+            ringing.enabled = true;
         }
     }
 }

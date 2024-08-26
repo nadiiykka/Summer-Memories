@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 6c2f847ca9350b146bcb3a5f0f5b4f96
+  - enabled: 1
+    path: Assets/Scenes/Mushrooms.unity
+    guid: 0bcd66f2e8fc4a2408c6ffc8b0d9f306
+  - enabled: 1
+    path: Assets/Scenes/MushroomsDialogue.unity
+    guid: 3a1aaa792810f254fb5b65df7f16f805
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 7796a9da78ee52142b542d896e384093
   m_configObjects: {}

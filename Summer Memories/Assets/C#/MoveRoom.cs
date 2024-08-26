@@ -12,9 +12,15 @@ public class MoveRoom : MonoBehaviour
     private Vector2 movement;
     private bool facingRight = true; // Визначає, чи дивиться персонаж вправо
 
+    private Timer timer; // Reference to the Timer script
+    private bool hasMoved = false; // To check if the player has moved
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        // Find and assign the Timer script
+        timer = FindObjectOfType<Timer>();
     }
 
     void Update()
@@ -22,6 +28,13 @@ public class MoveRoom : MonoBehaviour
         // Отримання вводу від користувача
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        // Check if the player has started moving
+        if (!hasMoved && (movement.x != 0 || movement.y != 0))
+        {
+            hasMoved = true;
+            timer.StartTimer(); // Start the timer when the player first moves
+        }
 
         // Оновлення анімаційних параметрів
         animator.SetFloat("Speed", movement.sqrMagnitude); // Швидкість використовується для перевірки руху
