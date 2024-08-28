@@ -74,7 +74,7 @@ public class CheckMushroom : MonoBehaviour
 
     void Messages()
     {
-        messages1.Add("Did you find good mushrooms?");
+        messages1.Add("Did you any find good mushrooms?");
         messages2.Add("Of course, I'm not an expert, but I think these are nice");
         messages1.Add("Well, show me!");
 

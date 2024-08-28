@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 3139247287791991964, guid: 13342f0a2efd02045adc00847052704c, type: 3}
+  parametr: 0.5
 --- !u!222 &3736336924306566440
 CanvasRenderer:
   m_ObjectHideFlags: 0

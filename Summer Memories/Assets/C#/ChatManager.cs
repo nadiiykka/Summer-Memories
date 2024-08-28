@@ -46,7 +46,7 @@ public class ChatManager : MonoBehaviour
             message2.text = messagesForMessage2[messageIndex];
         }
 
-        StartCoroutine(ShowNextMessageAfterDelay(4f));
+        StartCoroutine(ShowNextMessageAfterDelay(3f));
     }
 
     IEnumerator ShowNextMessageAfterDelay(float delay)

@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private float jumpingPower = 3f;
     private bool isFacingRight = true;
 
+    public VariableJoystick variableJoystick; // Reference to the joystick
+
     public float minX; // мінімальна координата X, яку може зайняти персонаж
     public float maxX; // максимальна координата X, яку може зайняти персонаж
 
@@ -19,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Отримуємо горизонтальний ввід
-        horizontal = Input.GetAxisRaw("Horizontal");
+        horizontal = variableJoystick.Horizontal;
 
         // Оновлюємо анімаційний параметр Speed для перемикання між анімаціями
         animator.SetFloat("Speed", Mathf.Abs(horizontal));

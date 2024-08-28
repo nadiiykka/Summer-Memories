@@ -8,6 +8,8 @@ public class MoveRoom : MonoBehaviour
     public float minX; // мінімальна координата X, яку може зайняти персонаж
     public float maxX; // максимальна координата X, яку може зайняти персонаж
 
+    public VariableJoystick variableJoystick; // Reference to the joystick
+
     private Rigidbody2D rb;
     private Vector2 movement;
     private bool facingRight = true; // Визначає, чи дивиться персонаж вправо
@@ -18,16 +20,14 @@ public class MoveRoom : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        // Find and assign the Timer script
         timer = FindObjectOfType<Timer>();
     }
 
     void Update()
     {
-        // Отримання вводу від користувача
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        // Obtain joystick input
+        movement.x = variableJoystick.Horizontal;
+        movement.y = variableJoystick.Vertical;
 
         // Check if the player has started moving
         if (!hasMoved && (movement.x != 0 || movement.y != 0))
@@ -36,10 +36,10 @@ public class MoveRoom : MonoBehaviour
             timer.StartTimer(); // Start the timer when the player first moves
         }
 
-        // Оновлення анімаційних параметрів
-        animator.SetFloat("Speed", movement.sqrMagnitude); // Швидкість використовується для перевірки руху
+        // Update animation parameters
+        animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        // Відзеркалення персонажа при русі вліво/вправо
+        // Flip character based on direction
         if (movement.x < 0 && facingRight)
         {
             Flip();
@@ -52,22 +52,22 @@ public class MoveRoom : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Отримання нової позиції персонажа
+        // Calculate the new position based on joystick input
         Vector2 newPosition = rb.position + movement * moveSpeed * Time.fixedDeltaTime;
 
-        // Обмежуємо рух персонажа за X між minX і maxX
+        // Clamp the character's position within minX and maxX
         newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
 
-        // Переміщення персонажа
+        // Move the character
         rb.MovePosition(newPosition);
     }
 
-    // Функція для відзеркалення персонажа по осі X
+    // Function to flip the character along the X-axis
     void Flip()
     {
         facingRight = !facingRight;
         Vector3 scaler = transform.localScale;
-        scaler.x *= -1; // Змінюємо знак на осі X для відзеркалення
+        scaler.x *= -1; // Invert the X axis for flipping
         transform.localScale = scaler;
     }
 }
