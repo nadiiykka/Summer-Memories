@@ -18,6 +18,8 @@ public class CheckMushroom : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+
         Messages(); // Initialize messages
         ShowNextMessage(); // Show the first message
     }
