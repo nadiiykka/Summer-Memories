@@ -24,9 +24,17 @@ public class ChatManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Check for mouse click
+        // Check if there is at least one touch
+        if (Input.touchCount > 0)
         {
-            ShowNextMessage(); // Show the next message on click
+            // Get the first touch
+            Touch touch = Input.GetTouch(0);
+
+            // Check if the touch has just begun
+            if (touch.phase == TouchPhase.Began)
+            {
+                ShowNextMessage(); // Show the next message on touch
+            }
         }
     }
 
@@ -36,7 +44,7 @@ public class ChatManager : MonoBehaviour
         {
             if (messageIndex1 < messagesForMessage1.Length) 
             {
-                message1.text = messagesForMessage1[messageIndex1]; // Display message in text field 2
+                message1.text = messagesForMessage1[messageIndex1]; // Display message in text field 1
                 animator1.SetTrigger("Message1Up"); 
                 animator2.SetTrigger("Message2Down"); 
                 messageIndex1++; 
@@ -46,7 +54,7 @@ public class ChatManager : MonoBehaviour
         {
             if (messageIndex2 < messagesForMessage2.Length)
             {
-                message2.text = messagesForMessage2[messageIndex2]; // Display message in text field 1
+                message2.text = messagesForMessage2[messageIndex2]; // Display message in text field 2
                 animator2.SetTrigger("Message2Up"); 
                 animator1.SetTrigger("Message1Down"); 
                 messageIndex2++;

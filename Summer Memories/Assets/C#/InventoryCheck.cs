@@ -25,9 +25,14 @@ public class InventoryCheck : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
-            ShowNextMessage(); // Показати наступне повідомлення
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                ShowNextMessage(); 
+            }
         }
     }
 
