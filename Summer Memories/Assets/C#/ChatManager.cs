@@ -1,74 +1,69 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ChatManager : MonoBehaviour
 {
-    public TextMeshProUGUI message1;
-    public TextMeshProUGUI message2;
+    public TextMeshProUGUI message1; // Text field 1
+    public TextMeshProUGUI message2; // Text field 2
 
-    public string[] messagesForMessage1;
-    public string[] messagesForMessage2;
+    public Animator animator1; // Animator for text field 1
+    public Animator animator2; // Animator for text field 2
 
-    private int messageIndex = 0;
-    private bool isWaitingForClick = true;
+    public string[] messagesForMessage1; // Messages for text field 1
+    public string[] messagesForMessage2; // Messages for text field 2
+
+    private int messageIndex1 = 0; // Track current message index
+    private int messageIndex2 = 0;
+    private bool showInFirstField = true; // Toggle between text fields
 
     void Start()
     {
-        ShowMessageInFirstField();
+        ShowNextMessage(); // Show the first message at start
     }
 
     void Update()
     {
-        if (isWaitingForClick && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) // Check for mouse click
         {
-            isWaitingForClick = false;
-            ShowMessageInSecondField();
+            ShowNextMessage(); // Show the next message on click
         }
     }
 
-    void ShowMessageInFirstField()
+    void ShowNextMessage()
     {
-        if (messageIndex < messagesForMessage1.Length)
+        if (showInFirstField) 
         {
-            message1.text = messagesForMessage1[messageIndex];
-        }
-
-        isWaitingForClick = true;
-    }
-
-    void ShowMessageInSecondField()
-    {
-        if (messageIndex < messagesForMessage2.Length)
-        {
-            message2.text = messagesForMessage2[messageIndex];
-        }
-
-        StartCoroutine(ShowNextMessageAfterDelay(3f));
-    }
-
-    IEnumerator ShowNextMessageAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        messageIndex++;
-
-        if (messageIndex < messagesForMessage1.Length || messageIndex < messagesForMessage2.Length)
-        {
-            ShowMessageInFirstField();
+            if (messageIndex1 < messagesForMessage1.Length) 
+            {
+                message1.text = messagesForMessage1[messageIndex1]; // Display message in text field 2
+                animator1.SetTrigger("Message1Up"); 
+                animator2.SetTrigger("Message2Down"); 
+                messageIndex1++; 
+            }
         }
         else
         {
-            // Усі повідомлення відображено, завантажуємо нову сцену
+            if (messageIndex2 < messagesForMessage2.Length)
+            {
+                message2.text = messagesForMessage2[messageIndex2]; // Display message in text field 1
+                animator2.SetTrigger("Message2Up"); 
+                animator1.SetTrigger("Message1Down"); 
+                messageIndex2++;
+            }
+        }
+
+        showInFirstField = !showInFirstField; // Toggle field after displaying message
+
+        if (messageIndex1 >= messagesForMessage1.Length && messageIndex2 >= messagesForMessage2.Length) 
+        {
             LoadNextScene();
         }
     }
 
     void LoadNextScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex; 
+        SceneManager.LoadScene(currentSceneIndex + 1); 
     }
 }
