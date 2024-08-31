@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class InventoryCheck : MonoBehaviour
 {
@@ -31,7 +30,7 @@ public class InventoryCheck : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                ShowNextMessage(); 
+                ShowNextMessage();
             }
         }
     }
@@ -40,7 +39,6 @@ public class InventoryCheck : MonoBehaviour
     {
         if (isShowingInFirstField)
         {
-            // Перевірка, чи є ще повідомлення для відображення в першому полі
             if (messageIndex1 < messages1.Count)
             {
                 message1.text = messages1[messageIndex1]; // Встановити текст для message1
@@ -49,7 +47,6 @@ public class InventoryCheck : MonoBehaviour
         }
         else
         {
-            // Перевірка, чи є ще повідомлення для відображення в другому полі
             if (messageIndex2 < messages2.Count)
             {
                 message2.text = messages2[messageIndex2]; // Встановити текст для message2
@@ -57,13 +54,13 @@ public class InventoryCheck : MonoBehaviour
             }
         }
 
+        isShowingInFirstField = !isShowingInFirstField; // Перемикання між полями відображення
+
         // Check if all messages have been displayed
         if (messageIndex1 >= messages1.Count && messageIndex2 >= messages2.Count)
         {
             LoadNextScene(); // Load the next scene if all messages are done
         }
-
-        isShowingInFirstField = !isShowingInFirstField; // Перемикання між полями відображення
     }
 
     void LoadNextScene()
@@ -131,7 +128,9 @@ public class InventoryCheck : MonoBehaviour
             messages2.Add("Oops.");
             messages1.Add("REALLY? It had to be at the top of your list.");
             messages2.Add("What do I do...");
-            messages1.Add("You are lucky that you have me, I will share with you.");
+
+            StartCoroutine(ShowMessagesAndLoadScene()); // Start coroutine to show messages and load scene
+            return; // Exit the method to prevent adding more messages
         }
         else if ((!hasWater && hasBread) || (!hasWater && hasFish) || (hasWater && !hasBread) || (hasWater && !hasFish))
         {
@@ -151,7 +150,6 @@ public class InventoryCheck : MonoBehaviour
         {
             messages2.Add("Camera! We need to have nice pics.");
             messages1.Add("WOW! Super!");
-            
         }
         if (hasCactus)
         {
@@ -164,7 +162,6 @@ public class InventoryCheck : MonoBehaviour
         {
             messages2.Add("First Aid Kit");
             messages1.Add("Oh yes! I hope it won't be useful to us.");
-            
         }
         if (hasBook)
         {
@@ -176,5 +173,17 @@ public class InventoryCheck : MonoBehaviour
 
         messages2.Add("Okaaaay! Let's go, I think");
         messages1.Add("Let's goooo!!!");
+    }
+
+    IEnumerator ShowMessagesAndLoadScene()
+    {
+        // Wait for messages to be displayed
+        while (messageIndex1 < messages1.Count || messageIndex2 < messages2.Count)
+        {
+            yield return null; // Wait for the next frame
+        }
+
+        // Load the specific scene after messages are shown
+        SceneManager.LoadScene(10);
     }
 }

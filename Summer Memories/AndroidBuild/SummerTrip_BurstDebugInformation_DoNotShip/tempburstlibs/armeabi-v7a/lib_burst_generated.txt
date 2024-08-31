@@ -1,4 +1,4 @@
-Library: C:\Users\nadiia.haidash\Documents\GitHub\Summer-Memories\Summer Memories\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
+Library: C:\Users\admin\Documents\GitHub\Summer-Memories\Summer Memories\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-16
 --target=ARMV7A_NEON32
@@ -27,10 +27,10 @@ Library: C:\Users\nadiia.haidash\Documents\GitHub\Summer-Memories\Summer Memorie
 --assembly-defines=Unity.Timeline;
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\nadiia.haidash\Documents\GitHub\Summer-Memories\Summer Memories\Temp\Burst
+--temp-folder=C:\Users\admin\Documents\GitHub\Summer-Memories\Summer Memories\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/PlaybackEngines/AndroidPlayer
---decode-folder=C:\Users\nadiia.haidash\Documents\GitHub\Summer-Memories\Summer Memories\Library\Burst
---output=C:\Users\nadiia.haidash\Documents\GitHub\Summer-Memories\Summer Memories\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
+--decode-folder=C:\Users\admin\Documents\GitHub\Summer-Memories\Summer Memories\Library\Burst
+--output=C:\Users\admin\Documents\GitHub\Summer-Memories\Summer Memories\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10

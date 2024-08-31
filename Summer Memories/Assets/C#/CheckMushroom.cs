@@ -9,6 +9,8 @@ public class CheckMushroom : MonoBehaviour
     public TextMeshProUGUI message1;
     public TextMeshProUGUI message2;
 
+    public Animator bearAnim;
+
     private int messageIndex1 = 0;
     private int messageIndex2 = 0;
     private bool isShowingInFirstField = true;
@@ -19,6 +21,8 @@ public class CheckMushroom : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+
+        bearAnim.enabled = false;
 
         Messages(); // Initialize messages
         ShowNextMessage(); // Show the first message
@@ -57,9 +61,9 @@ public class CheckMushroom : MonoBehaviour
         if (messageIndex1 >= messages1.Count && messageIndex2 >= messages2.Count)
         {
             // Only call LoadNextScene if no other script has already triggered it
-            
-                LoadNextScene(); // Load the next scene if all messages are done
-            
+
+            LoadNextScene(); // Load the next scene if all messages are done
+
         }
 
         isShowingInFirstField = !isShowingInFirstField; // Switch between display fields
@@ -84,8 +88,12 @@ public class CheckMushroom : MonoBehaviour
         {
             messages1.Add("Oh no! These are poisonous.");
             messages2.Add("No way!!!");
-            messages1.Add("Well, I think mine will be enough for us.");
-            messages2.Add("Sorry...");
+
+            messages1.Add("Look, a bear right there.");
+            messages2.Add("AAA");
+
+            StartCoroutine(ShowMessagesAndLoadScene());
+            return;
         }
         else
         {
@@ -93,5 +101,18 @@ public class CheckMushroom : MonoBehaviour
             messages2.Add("Yeeeey!!!");
         }
         messages1.Add("Nice!");
+    }
+
+    IEnumerator ShowMessagesAndLoadScene()
+    {
+        // Wait for messages to be displayed
+        while (messageIndex1 < messages1.Count || messageIndex2 < messages2.Count)
+        {
+            yield return null; // Wait for the next frame
+        }
+
+        bearAnim.enabled = true;
+
+        SceneManager.LoadScene(10);
     }
 }

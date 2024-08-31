@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message1: {fileID: 1100833876}
   message2: {fileID: 1894941978}
+  bearAnim: {fileID: 1613558611}
 --- !u!1 &785242719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1053,7 @@ Transform:
   m_GameObject: {fileID: 1613558609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.739, y: -1.627, z: 0.002474}
+  m_LocalPosition: {x: -5.21, y: -1.627, z: 0.002474}
   m_LocalScale: {x: 0.3865469, y: 0.3865469, z: 0.3865469}
   m_ConstrainProportionsScale: 0
   m_Children: []

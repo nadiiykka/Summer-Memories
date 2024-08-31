@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8356a858c37b75d428ad4ae8edcdbd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
   variableJoystick: {fileID: 2043151785}
   minX: -17.017
   maxX: 24
@@ -1967,7 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8356a858c37b75d428ad4ae8edcdbd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
   variableJoystick: {fileID: 2043151785}
   minX: -16.64
   maxX: 24
