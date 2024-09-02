@@ -89,6 +89,8 @@ public class CheckMushroom : MonoBehaviour
             messages1.Add("Oh no! These are poisonous.");
             messages2.Add("No way!!!");
 
+            bearAnim.enabled = true;
+
             messages1.Add("Look, a bear right there.");
             messages2.Add("AAA");
 
@@ -110,9 +112,6 @@ public class CheckMushroom : MonoBehaviour
         {
             yield return null; // Wait for the next frame
         }
-
-        bearAnim.enabled = true;
-
         SceneManager.LoadScene(10);
     }
 }

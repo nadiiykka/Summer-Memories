@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Required for scene management
+using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
 public class ButtonMushrooms : MonoBehaviour

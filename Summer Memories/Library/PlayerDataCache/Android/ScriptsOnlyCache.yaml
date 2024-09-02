@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - CameraFollow
     - ChatManager
     - CheckMushroom
+    - Delay
     - EnableAnimatorOnClick
     - Inventory
     - InventoryCheck
@@ -49,6 +50,8 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GroupBrush
     - UnityEditor.Tilemaps.LineBrush
     - UnityEditor.Tilemaps.RandomBrush
+    Unity.Formats.Fbx.Editor.dll:
+    - UnityEditor.Formats.Fbx.Exporter.ExportSettings
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TerrainTools.Editor.dll:
@@ -205,12 +208,6 @@ ScriptsOnlyBuild:
     methodName: MinusMushroom
   - assembly: Assembly-CSharp
     fullTypeName: MenuManager
-    methodName: StartGame
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuManager
-    methodName: StartGame
-  - assembly: Assembly-CSharp
-    fullTypeName: MenuManager
     methodName: QuitGame
   - assembly: Assembly-CSharp
     fullTypeName: MenuManager
@@ -252,8 +249,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16782}
     - Class: 114
-      Script: {instanceID: 16854}
-    - Class: 114
       Script: {instanceID: 18406}
     - Class: 114
       Script: {instanceID: 18720}
@@ -263,6 +258,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 23176}
     - Class: 114
       Script: {instanceID: 23968}
+    - Class: 114
+      Script: {instanceID: 30866}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -272,8 +269,6 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
       Script: {instanceID: 0}
     - Class: 223
       Script: {instanceID: 0}
@@ -2518,6 +2513,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: aa95100665031ea254131a1a9bc70b0e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Delay
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
@@ -2531,4 +2532,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/CampFire.unity
   - Assets/Scenes/End.unity
   - Assets/Scenes/Game Over.unity
-  playerPath: C:/Users/admin/Documents/GitHub/Summer-Memories/Summer Memories/AndroidBuild/SummerTrip.apk
+  playerPath: C:/Users/admin/Documents/GitHub/Summer-Memories/Summer Memories/AndroidBuild/MySummerTrip.apk
