@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 1385367335}
-  backgroundMusic: {fileID: 0}
-  backgroundMusic2: {fileID: 0}
+  backgroundMusic: {fileID: 1142358882}
+  backgroundMusic2: {fileID: 1142358882}
 --- !u!4 &86336177
 Transform:
   m_ObjectHideFlags: 0
@@ -2852,8 +2852,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007053632}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5165}
-  m_LocalScale: {x: 4.874496, y: 4.874496, z: 4.874496}
+  m_LocalPosition: {x: 0, y: 0, z: -5130.3}
+  m_LocalScale: {x: 5.00367, y: 5.00367, z: 5.00367}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1027717105}
@@ -2861,7 +2861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350.7, y: 146.2}
+  m_AnchoredPosition: {x: 350.7, y: 144.1}
   m_SizeDelta: {x: 5.52, y: 6.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2007053634
