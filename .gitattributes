@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Застосовуємо LF як закінчення рядків для всіх файлів Unity
+*.unity text eol=lf
+
