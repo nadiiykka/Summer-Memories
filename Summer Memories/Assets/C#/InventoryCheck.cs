@@ -13,13 +13,13 @@ public class InventoryCheck : MonoBehaviour
     private int messageIndex2 = 0;
     private bool isShowingInFirstField = true;
 
-    private List<string> messages1 = new List<string>(); // Список повідомлень для message1
-    private List<string> messages2 = new List<string>(); // Список повідомлень для message2
+    private List<string> messages1 = new List<string>(); 
+    private List<string> messages2 = new List<string>(); 
 
     void Start()
     {
-        CheckSavedTags(); // Додати всі необхідні повідомлення в списки
-        ShowNextMessage(); // Показати перше повідомлення
+        CheckSavedTags(); 
+        ShowNextMessage(); 
     }
 
     void Update()
@@ -132,7 +132,7 @@ public class InventoryCheck : MonoBehaviour
             StartCoroutine(ShowMessagesAndLoadScene()); // Start coroutine to show messages and load scene
             return; // Exit the method to prevent adding more messages
         }
-        else if ((!hasWater && hasBread) || (!hasWater && hasFish) || (hasWater && !hasBread) || (hasWater && !hasFish))
+        else if ((!hasWater && hasBread) || (!hasWater && hasFish) || (hasWater && !hasBread) || (hasWater && !hasFish) || (hasBread && !hasFish) || (!hasBread && hasFish))
         {
             messages2.Add("Oops. Only one of that...");
             messages1.Add("Omg. You are lucky that you have me, I will share with you.");
