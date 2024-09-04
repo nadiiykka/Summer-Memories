@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement; // Required for scene management
+using UnityEngine.SceneManagement; 
 
 public class CheckMushroom : MonoBehaviour
 {
@@ -15,8 +15,8 @@ public class CheckMushroom : MonoBehaviour
     private int messageIndex2 = 0;
     private bool isShowingInFirstField = true;
 
-    private List<string> messages1 = new List<string>(); // List of messages for message1
-    private List<string> messages2 = new List<string>(); // List of messages for message2
+    private List<string> messages1 = new List<string>(); 
+    private List<string> messages2 = new List<string>(); 
 
     void Start()
     {
@@ -24,15 +24,15 @@ public class CheckMushroom : MonoBehaviour
 
         bearAnim.enabled = false;
 
-        Messages(); // Initialize messages
-        ShowNextMessage(); // Show the first message
+        Messages(); 
+        ShowNextMessage(); 
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            ShowNextMessage(); // Show the next message on mouse click
+            ShowNextMessage(); 
         }
     }
 
@@ -40,33 +40,28 @@ public class CheckMushroom : MonoBehaviour
     {
         if (isShowingInFirstField)
         {
-            // Check if there are more messages to display in the first field
             if (messageIndex1 < messages1.Count)
             {
-                message1.text = messages1[messageIndex1]; // Set text for message1
-                messageIndex1++; // Update index for the next message
+                message1.text = messages1[messageIndex1]; 
+                messageIndex1++; 
             }
         }
         else
         {
-            // Check if there are more messages to display in the second field
             if (messageIndex2 < messages2.Count)
             {
-                message2.text = messages2[messageIndex2]; // Set text for message2
-                messageIndex2++; // Update index for the next message
+                message2.text = messages2[messageIndex2]; 
+                messageIndex2++;
             }
         }
 
-        // Check if all messages have been displayed
         if (messageIndex1 >= messages1.Count && messageIndex2 >= messages2.Count)
         {
-            // Only call LoadNextScene if no other script has already triggered it
-
-            LoadNextScene(); // Load the next scene if all messages are done
+            LoadNextScene(); 
 
         }
 
-        isShowingInFirstField = !isShowingInFirstField; // Switch between display fields
+        isShowingInFirstField = !isShowingInFirstField;
     }
 
     void LoadNextScene()
@@ -107,10 +102,9 @@ public class CheckMushroom : MonoBehaviour
 
     IEnumerator ShowMessagesAndLoadScene()
     {
-        // Wait for messages to be displayed
         while (messageIndex1 < messages1.Count || messageIndex2 < messages2.Count)
         {
-            yield return null; // Wait for the next frame
+            yield return null; 
         }
         SceneManager.LoadScene(10);
     }

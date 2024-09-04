@@ -8,64 +8,53 @@ public class PlayerMovement : MonoBehaviour
     private float jumpingPower = 3f;
     private bool isFacingRight = true;
 
-    public VariableJoystick variableJoystick; // Reference to the joystick
+    public VariableJoystick variableJoystick; 
 
-    public float minX; // мінімальна координата X, яку може зайняти персонаж
-    public float maxX; // максимальна координата X, яку може зайняти персонаж
+    public float minX; 
+    public float maxX; 
 
-    public Animator animator; // Посилання на компонент Animator
+    public Animator animator;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
     void Update()
     {
-        // Отримуємо горизонтальний ввід
         horizontal = variableJoystick.Horizontal;
 
-        // Оновлюємо анімаційний параметр Speed для перемикання між анімаціями
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
-        // Стрибок
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
-        // Зменшення швидкості під час відпускання кнопки стрибка
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
-        // Відзеркалення персонажа при русі вліво/вправо
         Flip();
     }
 
     private void FixedUpdate()
     {
-        // Рух персонажа
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
-        // Отримуємо поточну позицію персонажа
         Vector3 clampedPosition = transform.position;
 
-        // Обмежуємо координату X між minX та maxX
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, minX, maxX);
 
-        // Оновлюємо позицію персонажа
         transform.position = clampedPosition;
     }
 
     private bool IsGrounded()
     {
-        // Перевірка, чи персонаж на землі
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
     private void Flip()
     {
-        // Перевірка на зміну напрямку руху
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight = !isFacingRight;

@@ -14,7 +14,6 @@ public class Phone : MonoBehaviour
     private float dilay = 5f;
     private float timer = 0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         MessagePrefab.SetActive(false);
@@ -29,7 +28,6 @@ public class Phone : MonoBehaviour
         ringing.enabled = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;

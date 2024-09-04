@@ -7,20 +7,18 @@ using Unity.VisualScripting;
 
 public class ButtonMushrooms : MonoBehaviour
 {
-    public static bool anyNegativePickedUp = false; // Static flag for negative pickups (if needed elsewhere)
+    public static bool anyNegativePickedUp = false;
     public GameObject panel;
 
     private Button button;
 
-    public static int totalButtonClicks = 0; // Static variable to track the total number of button clicks
+    public static int totalButtonClicks = 0; 
 
     public void PlusMushroom()
     {
         Debug.Log("Button clicked: Good Mushroom");
         
         IncrementButtonClickCount();
-
-        OnButtonClick();
     }
 
     public void MinusMushroom()
@@ -29,30 +27,21 @@ public class ButtonMushrooms : MonoBehaviour
         anyNegativePickedUp = true;
         
         IncrementButtonClickCount();
-
-        OnButtonClick();
     }
 
     private void IncrementButtonClickCount()
     {
 
-        totalButtonClicks++; // Increment the total button click count
+        totalButtonClicks++; 
 
         if (totalButtonClicks >= 3)
         {
-            LoadNextScene(); // Load the next scene after 3 clicks
+            LoadNextScene(); 
         }
-    }
-    void OnButtonClick()
-    {
-       button = GetComponent<Button>();
-
-        button.gameObject.SetActive(false);
     }
 
     private void LoadNextScene()
     {
-        // Assuming you want to load the next scene in the build order
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }

@@ -15,28 +15,24 @@ public class Timer : MonoBehaviour
     public GameObject items;
 
     private bool stopTimer;
-    private bool timerStarted = false; // Add this to check if the timer has started
+    private bool timerStarted = false; 
 
-    private float startTime; // Store the time when the timer starts
+    private float startTime;
 
-    // Start is called before the first frame update
     void Start()
     {
         stopTimer = false;
         crosses.SetActive(true);
         items.SetActive(true);
         
-        // Initialize the timer slider but don't start the timer yet
         timerSlider.maxValue = gameTime;
         timerSlider.value = gameTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timerStarted && !stopTimer)
         {
-            // Update the time remaining
             float time = gameTime - (Time.time - startTime);
 
             int minutes = Mathf.FloorToInt(time / 60);
@@ -60,7 +56,7 @@ public class Timer : MonoBehaviour
         if (!timerStarted)
         {
             timerStarted = true;
-            startTime = Time.time; // Record the time when the timer starts
+            startTime = Time.time;
         }
     }
 

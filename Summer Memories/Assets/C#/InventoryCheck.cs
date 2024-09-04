@@ -41,25 +41,24 @@ public class InventoryCheck : MonoBehaviour
         {
             if (messageIndex1 < messages1.Count)
             {
-                message1.text = messages1[messageIndex1]; // Встановити текст для message1
-                messageIndex1++; // Оновити індекс для наступного повідомлення
+                message1.text = messages1[messageIndex1];
+                messageIndex1++; 
             }
         }
         else
         {
             if (messageIndex2 < messages2.Count)
             {
-                message2.text = messages2[messageIndex2]; // Встановити текст для message2
-                messageIndex2++; // Оновити індекс для наступного повідомлення
+                message2.text = messages2[messageIndex2]; 
+                messageIndex2++; 
             }
         }
 
-        isShowingInFirstField = !isShowingInFirstField; // Перемикання між полями відображення
+        isShowingInFirstField = !isShowingInFirstField; 
 
-        // Check if all messages have been displayed
         if (messageIndex1 >= messages1.Count && messageIndex2 >= messages2.Count)
         {
-            LoadNextScene(); // Load the next scene if all messages are done
+            LoadNextScene();
         }
     }
 
@@ -80,7 +79,7 @@ public class InventoryCheck : MonoBehaviour
         bool hasAid = false;
         bool hasBook = false;
 
-        int inventorySize = PlayerPrefs.GetInt("InventorySize", 4); // Отримання розміру інвентарю
+        int inventorySize = PlayerPrefs.GetInt("InventorySize", 4); 
 
         for (int i = 0; i < inventorySize; i++)
         {
@@ -129,8 +128,8 @@ public class InventoryCheck : MonoBehaviour
             messages1.Add("REALLY? It had to be at the top of your list.");
             messages2.Add("What do I do...");
 
-            StartCoroutine(ShowMessagesAndLoadScene()); // Start coroutine to show messages and load scene
-            return; // Exit the method to prevent adding more messages
+            StartCoroutine(ShowMessagesAndLoadScene()); 
+            return; 
         }
         else if ((!hasWater && hasBread) || (!hasWater && hasFish) || (hasWater && !hasBread) || (hasWater && !hasFish) || (hasBread && !hasFish) || (!hasBread && hasFish))
         {
@@ -177,13 +176,11 @@ public class InventoryCheck : MonoBehaviour
 
     IEnumerator ShowMessagesAndLoadScene()
     {
-        // Wait for messages to be displayed
         while (messageIndex1 < messages1.Count || messageIndex2 < messages2.Count)
         {
-            yield return null; // Wait for the next frame
+            yield return null; 
         }
 
-        // Load the specific scene after messages are shown
         SceneManager.LoadScene(10);
     }
 }
