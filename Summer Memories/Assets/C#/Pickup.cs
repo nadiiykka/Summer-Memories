@@ -20,7 +20,6 @@ public class Pickup : MonoBehaviour
                 {
                     inventory.isFull[i] = true;
 
-                    // Збереження тегу у PlayerPrefs
                     string itemTag = gameObject.tag;
                     PlayerPrefs.SetString("CollectedItem_" + i, itemTag);
                     PlayerPrefs.Save();

@@ -2,31 +2,31 @@
 
 public class PickupMushroom : MonoBehaviour
 {
-    public GameObject panel; // Reference to the panel UI GameObject
+    public GameObject panel; 
 
-    private static int i; // Static variable to track the number of pickups
+    private static int i; 
 
     
 
     private void Start()
     {
-        panel.SetActive(false); // Initially hide the panel
+        panel.SetActive(false); 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            // Increment the static counter
             i++;
 
-            // Destroy the mushroom GameObject
             Destroy(gameObject);
             
             if (i >= 10)
             {
-                panel.SetActive(true); // Show the panel after 10 pickups
+                panel.SetActive(true);
                 Time.timeScale = 0;
+
+                i = 0;
             }
         }
     }

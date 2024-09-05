@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MushroomsDialogue.unity
     guid: 3a1aaa792810f254fb5b65df7f16f805
   - enabled: 1
+    path: Assets/Scenes/CampFire.unity
+    guid: 947702e97a9d7ba45835b90189b8dac1
+  - enabled: 1
     path: Assets/Scenes/End.unity
     guid: 7796a9da78ee52142b542d896e384093
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 6507712598df81041885df5c03e9cd84
   m_configObjects: {}

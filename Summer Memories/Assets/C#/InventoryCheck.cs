@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class InventoryCheck : MonoBehaviour
 {
@@ -14,13 +13,13 @@ public class InventoryCheck : MonoBehaviour
     private int messageIndex2 = 0;
     private bool isShowingInFirstField = true;
 
-    private List<string> messages1 = new List<string>(); // Список повідомлень для message1
-    private List<string> messages2 = new List<string>(); // Список повідомлень для message2
+    private List<string> messages1 = new List<string>(); 
+    private List<string> messages2 = new List<string>(); 
 
     void Start()
     {
-        CheckSavedTags(); // Додати всі необхідні повідомлення в списки
-        ShowNextMessage(); // Показати перше повідомлення
+        CheckSavedTags(); 
+        ShowNextMessage(); 
     }
 
     void Update()
@@ -31,7 +30,7 @@ public class InventoryCheck : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                ShowNextMessage(); 
+                ShowNextMessage();
             }
         }
     }
@@ -40,30 +39,27 @@ public class InventoryCheck : MonoBehaviour
     {
         if (isShowingInFirstField)
         {
-            // Перевірка, чи є ще повідомлення для відображення в першому полі
             if (messageIndex1 < messages1.Count)
             {
-                message1.text = messages1[messageIndex1]; // Встановити текст для message1
-                messageIndex1++; // Оновити індекс для наступного повідомлення
+                message1.text = messages1[messageIndex1];
+                messageIndex1++; 
             }
         }
         else
         {
-            // Перевірка, чи є ще повідомлення для відображення в другому полі
             if (messageIndex2 < messages2.Count)
             {
-                message2.text = messages2[messageIndex2]; // Встановити текст для message2
-                messageIndex2++; // Оновити індекс для наступного повідомлення
+                message2.text = messages2[messageIndex2]; 
+                messageIndex2++; 
             }
         }
 
-        // Check if all messages have been displayed
+        isShowingInFirstField = !isShowingInFirstField; 
+
         if (messageIndex1 >= messages1.Count && messageIndex2 >= messages2.Count)
         {
-            LoadNextScene(); // Load the next scene if all messages are done
+            LoadNextScene();
         }
-
-        isShowingInFirstField = !isShowingInFirstField; // Перемикання між полями відображення
     }
 
     void LoadNextScene()
@@ -83,7 +79,7 @@ public class InventoryCheck : MonoBehaviour
         bool hasAid = false;
         bool hasBook = false;
 
-        int inventorySize = PlayerPrefs.GetInt("InventorySize", 4); // Отримання розміру інвентарю
+        int inventorySize = PlayerPrefs.GetInt("InventorySize", 4); 
 
         for (int i = 0; i < inventorySize; i++)
         {
@@ -131,9 +127,11 @@ public class InventoryCheck : MonoBehaviour
             messages2.Add("Oops.");
             messages1.Add("REALLY? It had to be at the top of your list.");
             messages2.Add("What do I do...");
-            messages1.Add("You are lucky that you have me, I will share with you.");
+
+            StartCoroutine(ShowMessagesAndLoadScene()); 
+            return; 
         }
-        else if ((!hasWater && hasBread) || (!hasWater && hasFish) || (hasWater && !hasBread) || (hasWater && !hasFish))
+        else if ((!hasWater && hasBread) || (!hasWater && hasFish) || (hasWater && !hasBread) || (hasWater && !hasFish) || (hasBread && !hasFish) || (!hasBread && hasFish))
         {
             messages2.Add("Oops. Only one of that...");
             messages1.Add("Omg. You are lucky that you have me, I will share with you.");
@@ -151,7 +149,6 @@ public class InventoryCheck : MonoBehaviour
         {
             messages2.Add("Camera! We need to have nice pics.");
             messages1.Add("WOW! Super!");
-            
         }
         if (hasCactus)
         {
@@ -164,7 +161,6 @@ public class InventoryCheck : MonoBehaviour
         {
             messages2.Add("First Aid Kit");
             messages1.Add("Oh yes! I hope it won't be useful to us.");
-            
         }
         if (hasBook)
         {
@@ -176,5 +172,15 @@ public class InventoryCheck : MonoBehaviour
 
         messages2.Add("Okaaaay! Let's go, I think");
         messages1.Add("Let's goooo!!!");
+    }
+
+    IEnumerator ShowMessagesAndLoadScene()
+    {
+        while (messageIndex1 < messages1.Count || messageIndex2 < messages2.Count)
+        {
+            yield return null; 
+        }
+
+        SceneManager.LoadScene(10);
     }
 }
