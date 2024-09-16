@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - CheckMushroom
     - Delay
     - EnableAnimatorOnClick
+    - GameManager
     - Inventory
     - InventoryCheck
     - MenuManager
@@ -50,8 +51,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GroupBrush
     - UnityEditor.Tilemaps.LineBrush
     - UnityEditor.Tilemaps.RandomBrush
-    Unity.Formats.Fbx.Editor.dll:
-    - UnityEditor.Formats.Fbx.Exporter.ExportSettings
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TerrainTools.Editor.dll:
@@ -79,10 +78,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -156,11 +153,47 @@ ScriptsOnlyBuild:
     fullTypeName: MenuManager
     methodName: QuitGame
   - assembly: Assembly-CSharp
+    fullTypeName: SoundManager
+    methodName: ChangeVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Pause
+  - assembly: Assembly-CSharp
     fullTypeName: SceneLoader
     methodName: LoadNextScene
   - assembly: Assembly-CSharp
-    fullTypeName: Slot
-    methodName: DropItem
+    fullTypeName: GameManager
+    methodName: Pause
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundManager
+    methodName: ChangeVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Pause
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Resume
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Pause
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: Slot
     methodName: DropItem
@@ -168,9 +201,66 @@ ScriptsOnlyBuild:
     fullTypeName: Slot
     methodName: DropItem
   - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Pause
+  - assembly: Assembly-CSharp
     fullTypeName: Slot
     methodName: DropItem
   - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Pause
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Slot
+    methodName: DropItem
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundManager
+    methodName: ChangeVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Resume
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Pause
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundManager
+    methodName: ChangeVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Resume
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundManager
+    methodName: ChangeVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Pause
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Resume
+  - assembly: Assembly-CSharp
     fullTypeName: ButtonMushrooms
     methodName: PlusMushroom
   - assembly: Assembly-CSharp
@@ -189,8 +279,14 @@ ScriptsOnlyBuild:
     fullTypeName: ButtonMushrooms
     methodName: PlusMushroom
   - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Resume
+  - assembly: Assembly-CSharp
     fullTypeName: ButtonMushrooms
     methodName: MinusMushroom
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Pause
   - assembly: Assembly-CSharp
     fullTypeName: ButtonMushrooms
     methodName: MinusMushroom
@@ -204,8 +300,38 @@ ScriptsOnlyBuild:
     fullTypeName: ButtonMushrooms
     methodName: PlusMushroom
   - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundManager
+    methodName: ChangeVolume
+  - assembly: Assembly-CSharp
     fullTypeName: ButtonMushrooms
     methodName: MinusMushroom
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Resume
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: Pause
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundManager
+    methodName: ChangeVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuManager
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuManager
+    methodName: StartGame
   - assembly: Assembly-CSharp
     fullTypeName: MenuManager
     methodName: QuitGame
@@ -259,7 +385,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 23968}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 30866}
+=======
+      Script: {instanceID: 24642}
+>>>>>>> c89bf684eee52705e7e3f3916e8d6adb0865eea6
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -302,6 +432,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 18406}
     - Class: 114
       Script: {instanceID: 18720}
@@ -315,6 +446,31 @@ ScriptsOnlyBuild:
       Script: {instanceID: 23968}
     - Class: 114
       Script: {instanceID: 24910}
+=======
+      Script: {instanceID: 16782}
+    - Class: 114
+      Script: {instanceID: 16854}
+    - Class: 114
+      Script: {instanceID: 18406}
+    - Class: 114
+      Script: {instanceID: 18720}
+    - Class: 114
+      Script: {instanceID: 22186}
+    - Class: 114
+      Script: {instanceID: 22292}
+    - Class: 114
+      Script: {instanceID: 23176}
+    - Class: 114
+      Script: {instanceID: 23458}
+    - Class: 114
+      Script: {instanceID: 23968}
+    - Class: 114
+      Script: {instanceID: 24912}
+    - Class: 114
+      Script: {instanceID: 25252}
+    - Class: 114
+      Script: {instanceID: 25614}
+>>>>>>> c89bf684eee52705e7e3f3916e8d6adb0865eea6
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -422,6 +578,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 18406}
     - Class: 114
       Script: {instanceID: 18720}
@@ -435,6 +592,31 @@ ScriptsOnlyBuild:
       Script: {instanceID: 23458}
     - Class: 114
       Script: {instanceID: 23968}
+=======
+      Script: {instanceID: 16782}
+    - Class: 114
+      Script: {instanceID: 16854}
+    - Class: 114
+      Script: {instanceID: 18406}
+    - Class: 114
+      Script: {instanceID: 18720}
+    - Class: 114
+      Script: {instanceID: 19282}
+    - Class: 114
+      Script: {instanceID: 22186}
+    - Class: 114
+      Script: {instanceID: 22292}
+    - Class: 114
+      Script: {instanceID: 23176}
+    - Class: 114
+      Script: {instanceID: 23458}
+    - Class: 114
+      Script: {instanceID: 23968}
+    - Class: 114
+      Script: {instanceID: 25252}
+    - Class: 114
+      Script: {instanceID: 25614}
+>>>>>>> c89bf684eee52705e7e3f3916e8d6adb0865eea6
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -552,6 +734,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 16854}
     - Class: 114
       Script: {instanceID: 17130}
@@ -575,7 +758,46 @@ ScriptsOnlyBuild:
       Script: {instanceID: 23968}
     - Class: 114
       Script: {instanceID: 25130}
+=======
+      Script: {instanceID: 16782}
+    - Class: 114
+      Script: {instanceID: 16854}
+    - Class: 114
+      Script: {instanceID: 17130}
+    - Class: 114
+      Script: {instanceID: 17486}
+    - Class: 114
+      Script: {instanceID: 17740}
+    - Class: 114
+      Script: {instanceID: 18406}
+    - Class: 114
+      Script: {instanceID: 18720}
+    - Class: 114
+      Script: {instanceID: 20444}
+    - Class: 114
+      Script: {instanceID: 22186}
+    - Class: 114
+      Script: {instanceID: 22292}
+    - Class: 114
+      Script: {instanceID: 22690}
+    - Class: 114
+      Script: {instanceID: 23124}
+    - Class: 114
+      Script: {instanceID: 23176}
+    - Class: 114
+      Script: {instanceID: 23458}
+    - Class: 114
+      Script: {instanceID: 23968}
+    - Class: 114
+      Script: {instanceID: 25132}
+    - Class: 114
+      Script: {instanceID: 25252}
+    - Class: 114
+      Script: {instanceID: 25614}
+>>>>>>> c89bf684eee52705e7e3f3916e8d6adb0865eea6
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -657,9 +879,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 23968}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 26120}
     - Class: 114
       Script: {instanceID: 26544}
+=======
+      Script: {instanceID: 25252}
+    - Class: 114
+      Script: {instanceID: 25614}
+    - Class: 114
+      Script: {instanceID: 26124}
+    - Class: 114
+      Script: {instanceID: 26548}
+>>>>>>> c89bf684eee52705e7e3f3916e8d6adb0865eea6
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -728,7 +960,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 23968}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 25250}
+=======
+      Script: {instanceID: 25252}
+>>>>>>> c89bf684eee52705e7e3f3916e8d6adb0865eea6
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -795,6 +1031,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 19938}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 22292}
     - Class: 114
       Script: {instanceID: 23124}
@@ -808,6 +1045,27 @@ ScriptsOnlyBuild:
       Script: {instanceID: 26120}
     - Class: 114
       Script: {instanceID: 26524}
+=======
+      Script: {instanceID: 22186}
+    - Class: 114
+      Script: {instanceID: 22292}
+    - Class: 114
+      Script: {instanceID: 23124}
+    - Class: 114
+      Script: {instanceID: 23176}
+    - Class: 114
+      Script: {instanceID: 23458}
+    - Class: 114
+      Script: {instanceID: 23968}
+    - Class: 114
+      Script: {instanceID: 25252}
+    - Class: 114
+      Script: {instanceID: 25614}
+    - Class: 114
+      Script: {instanceID: 26124}
+    - Class: 114
+      Script: {instanceID: 26528}
+>>>>>>> c89bf684eee52705e7e3f3916e8d6adb0865eea6
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -854,6 +1112,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 18406}
     - Class: 114
       Script: {instanceID: 18720}
@@ -867,6 +1126,31 @@ ScriptsOnlyBuild:
       Script: {instanceID: 23458}
     - Class: 114
       Script: {instanceID: 23968}
+=======
+      Script: {instanceID: 16782}
+    - Class: 114
+      Script: {instanceID: 16854}
+    - Class: 114
+      Script: {instanceID: 18406}
+    - Class: 114
+      Script: {instanceID: 18720}
+    - Class: 114
+      Script: {instanceID: 22186}
+    - Class: 114
+      Script: {instanceID: 22292}
+    - Class: 114
+      Script: {instanceID: 22442}
+    - Class: 114
+      Script: {instanceID: 23176}
+    - Class: 114
+      Script: {instanceID: 23458}
+    - Class: 114
+      Script: {instanceID: 23968}
+    - Class: 114
+      Script: {instanceID: 25252}
+    - Class: 114
+      Script: {instanceID: 25614}
+>>>>>>> c89bf684eee52705e7e3f3916e8d6adb0865eea6
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -925,6 +1209,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 20472}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 22224}
     - Class: 114
       Script: {instanceID: 22292}
@@ -934,6 +1219,23 @@ ScriptsOnlyBuild:
       Script: {instanceID: 23458}
     - Class: 114
       Script: {instanceID: 23968}
+=======
+      Script: {instanceID: 22186}
+    - Class: 114
+      Script: {instanceID: 22224}
+    - Class: 114
+      Script: {instanceID: 22292}
+    - Class: 114
+      Script: {instanceID: 23176}
+    - Class: 114
+      Script: {instanceID: 23458}
+    - Class: 114
+      Script: {instanceID: 23968}
+    - Class: 114
+      Script: {instanceID: 25252}
+    - Class: 114
+      Script: {instanceID: 25614}
+>>>>>>> c89bf684eee52705e7e3f3916e8d6adb0865eea6
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2179,6 +2481,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: aa95100665031ea254131a1a9bc70b0e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Delay
+  - hash:
+      serializedVersion: 2
       Hash: 007cdf5f8025adc0b0d6bd71e664c865
     assemblyName: Cinemachine
     namespaceName: Cinemachine
@@ -2351,6 +2659,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: ControlTrack
+  - hash:
+      serializedVersion: 2
+      Hash: eabac1b955d297a40334832b91b557a5
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: d5cd7f207e91ca8336c65a577a6fb2a0
@@ -2532,4 +2846,8 @@ ScriptsOnlyBuild:
   - Assets/Scenes/CampFire.unity
   - Assets/Scenes/End.unity
   - Assets/Scenes/Game Over.unity
+<<<<<<< HEAD
   playerPath: C:/Users/admin/Documents/GitHub/Summer-Memories/Summer Memories/AndroidBuild/MySummerTrip.apk
+=======
+  playerPath: C:/Users/nadiia.haidash/Documents/GitHub/Summer-Memories/Summer Memories/AndroidBuild/MySummerTrip.apk
+>>>>>>> c89bf684eee52705e7e3f3916e8d6adb0865eea6
